@@ -1,7 +1,7 @@
 # Shoes Demo
 
 <p>
-    <img src="http://localhost/data/img.png](https://sonhoang2071.site/data/img.png" alt="">
+    <img src="https://sonhoang2071.site/data/img.png" alt="">
 </p>
 
 ## Introduction
