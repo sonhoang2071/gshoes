@@ -87,6 +87,10 @@ class ShoesController extends Controller
                 "data" =>$newCart->shoes,
             ]);
         }
-
+        else {
+            return  response([
+                "price" => round(Session::get('Cart')->price,2),
+            ]);
+        }
     }
 }
