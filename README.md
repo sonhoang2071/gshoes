@@ -1,7 +1,7 @@
 # Shoes Demo
 
 <p>
-    <img src="http://localhost/data/img.png" alt="">
+    <img src="http://localhost/data/img.png](https://sonhoang2071.site/data/img.png" alt="">
 </p>
 
 ## Introduction
@@ -15,20 +15,21 @@ I build Shoes Project in Laravel development environment with Docker. Compatible
 1. Execute the following command
 
 ```bash
-$ make create-project
+$ make init
 
 # or...
 
-$ mkdir -p src
 $ cp .env.example .env
+$ cp /src/.env.example /src/.env
 $ docker compose build
 $ docker compose up -d
-$ docker compose exec app composer create-project --prefer-dist laravel/laravel .
+$ docker compose exec app composer install
+$ docker compose exec app composer dump-autoload
 $ docker compose exec app php artisan key:generate
 $ docker compose exec app php artisan storage:link
 $ docker compose exec app chmod -R 777 storage bootstrap/cache
 $ docker compose exec app php artisan migrate
-$ docker compose exec app php artisan make:seeder ShoesSeeder
+$ docker compose exec app php artisan db:seed --class=ShoesSeeder
 ```
 
 http://localhost
