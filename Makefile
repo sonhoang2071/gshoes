@@ -9,7 +9,7 @@ install:
 	@make fresh
 init:
 	cp .env.example .env
- 	cp /src/.env.example /src/.env
+ 	cp src/.env.example src/.env
  	docker compose build
  	docker compose up -d
  	docker compose exec app composer install
