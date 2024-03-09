@@ -7,17 +7,18 @@ install:
 	docker compose exec app php artisan storage:link
 	docker compose exec app chmod -R 777 storage bootstrap/cache
 	@make fresh
-create-project:
-	mkdir -p src
+init:
 	cp .env.example .env
-	docker compose build
-	docker compose up -d
-	docker compose exec app composer create-project --prefer-dist laravel/laravel .
+ 	cp /src/.env.example /src/.env
+ 	docker compose build
+ 	docker compose up -d
+ 	docker compose exec app composer install
+ 	docker compose exec app composer dump-autoload
 	docker compose exec app php artisan key:generate
 	docker compose exec app php artisan storage:link
-	docker compose exec app chmod -R 777 storage bootstrap/cache
-	@make fresh
-	@make shoes
+ 	docker compose exec app chmod -R 777 storage bootstrap/cache
+	docker compose exec app php artisan migrate
+	docker compose exec app php artisan db:seed --class=ShoesSeeder
 build:
 	docker compose build
 up:
