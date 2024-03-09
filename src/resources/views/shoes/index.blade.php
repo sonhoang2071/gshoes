@@ -152,7 +152,7 @@
 
                     $('#cart-content').append(newItem);
                 }
-                $("#price-cart").text(`${response.price}`);
+                $("#price-cart").text('$'+`${response.price}`);
             });
         }
         function renderData(res, id = null) {
