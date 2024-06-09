@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\ShoesController::class, 'index']);
+Route::get('', [\App\Http\Controllers\ShoesController::class, 'index']);
 Route::get('add/{id}', [\App\Http\Controllers\ShoesController::class, 'addToCart']);
 Route::get('update/{id}/{amount}', [\App\Http\Controllers\ShoesController::class, 'updateItemCart']);
 Route::get('delete/{id}', [\App\Http\Controllers\ShoesController::class, 'deleteItemCart']);
